@@ -10,15 +10,15 @@ import { Address, isAddress } from "viem";
 import { useAccount, useBalance } from "wagmi";
 import CurrencyLogo from "../CurrencyLogo";
 import {
-  ADDRESS_ZERO,
-  Currency,
-  ExtendedNative,
-  Token,
-} from "@cryptoalgebra/integral-sdk";
-import { useTokensState } from "@/state/tokensStore";
-import { Copy } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { formatBalance } from "@/utils/common/formatBalance";
+    ADDRESS_ZERO,
+    Currency,
+    ExtendedNative,
+    Token,
+} from '@cryptoalgebra/sdk';
+import { useTokensState } from '@/state/tokensStore';
+import { Copy } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { formatBalance } from '@/utils/common/formatBalance';
 
 const TokenSelectorView = {
   DEFAULT_LIST: "DEFAULT_LIST",
@@ -44,6 +44,7 @@ const Search = ({
   const tokenEntity = useAlgebraToken(
     debouncedQuery && isAddress(debouncedQuery) ? debouncedQuery : undefined
   );
+
   const fuseOptions = useMemo(
     () => ({
       keys: ["id", "symbol", "name"],
@@ -51,6 +52,7 @@ const Search = ({
     }),
     []
   );
+
   const { result, pattern, search } = useFuse<TokenFieldsFragment>({
     data,
     options: fuseOptions,
@@ -70,6 +72,7 @@ const Search = ({
       tokenEntity instanceof ExtendedNative ? undefined : tokenEntity
     );
   }, [result, tokenEntity, pattern, onSearch]);
+
   return (
     <input
       type="text"
@@ -109,12 +112,16 @@ const TokenRow = ({
 
   const balanceString = useMemo(() => {
     if (isLoading || !balance) return "Loading...";
+
     return formatBalance(balance.formatted);
   }, [balance, isLoading]);
+
   const lock = otherCurrency?.isNative
     ? token.id === ADDRESS_ZERO
     : token.id.toLowerCase() === otherCurrency?.wrapped.address.toLowerCase();
+
   const [isCopied, setIsCopied] = useState(false);
+
   const handleCopy = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     navigator.clipboard.writeText(token.id).then(() => {
@@ -122,6 +129,7 @@ const TokenRow = ({
       setTimeout(() => setIsCopied(false), 3000);
     });
   };
+
   return (
     <button
       disabled={lock}
@@ -191,19 +199,25 @@ export const TokenSelector = ({
   showNativeToken?: boolean;
 }) => {
   const { address: account } = useAccount();
+
   const [selectorView, setSelectorView] = useState<TokenSelectorViewType>(
     TokenSelectorView.DEFAULT_LIST
   );
+
   const {
     actions: { importToken },
   } = useTokensState();
+
   const { tokens, isLoading } = useAllTokens(showNativeToken);
+
   const [matchedTokens, setMatchedTokens] = useState<TokenFieldsFragment[]>([]);
   const [tokenForImport, setTokenForImport] = useState<Token>();
+
   const filteredTokens = useMemo(
     () => (matchedTokens.length ? matchedTokens : tokens),
     [tokens, matchedTokens]
   );
+
   const handleSearch = (
     matchedTokens: TokenFieldsFragment[],
     importToken: Token | undefined
@@ -218,6 +232,7 @@ export const TokenSelector = ({
       setSelectorView(TokenSelectorView.NOT_FOUND);
     }
   };
+
   const handleImport = (token: Token) => {
     importToken(
       token.address as Address,
@@ -229,6 +244,7 @@ export const TokenSelector = ({
     setSelectorView(TokenSelectorView.DEFAULT_LIST);
     setTokenForImport(undefined);
   };
+
   const Row = useCallback(
     ({
       data,
@@ -240,7 +256,9 @@ export const TokenSelector = ({
       style: React.CSSProperties;
     }) => {
       const token = data[index];
+
       if (!token) return null;
+
       return (
         <TokenRow
           account={account}
@@ -253,10 +271,12 @@ export const TokenSelector = ({
     },
     [account, onSelect, otherCurrency]
   );
+
   const itemKey = useCallback((index: number, data: TokenFieldsFragment[]) => {
     const currency = data[index];
     return currency.name;
   }, []);
+
   return (
     <div className="flex flex-col gap-6 pt-2">
       <Search data={tokens} onSearch={handleSearch} />

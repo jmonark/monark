@@ -14,8 +14,8 @@ const PATHS = {
   POOLS: "/pools",
   LAUNCHPAD: "/launchpad",
   ANALYTICS: "/analytics",
-  BRIDGE: "/bridge",
-  DOCS: "/docs",
+  BRIDGE: "/https://powpeg.rootstock.io/",
+  DOCS: "/https://docs.monark.exchange/",
   MORE: "none",
 };
 
@@ -27,6 +27,7 @@ interface MenuItem {
   icon?: ReactNode;
   subLinks?: MenuItem[];
   isActive?: boolean;
+  external?: string;
 }
 
 const menuItems: MenuItem[] = [
@@ -57,6 +58,7 @@ const menuItems: MenuItem[] = [
   {
     title: "Analytics",
     link: "/analytics",
+    isActive: true,
     active: [PATHS.ANALYTICS],
     navIcon: <BarChart className="h-6 w-6" />,
   },
@@ -68,7 +70,8 @@ const menuItems: MenuItem[] = [
     subLinks: [
       {
         title: "Bridge",
-        link: "/bridge",
+        link: "https://powpeg.rootstock.io/",
+        external: "https://docs.monark.exchange/",
         active: [PATHS.BRIDGE],
         icon: (
           <svg
@@ -88,7 +91,8 @@ const menuItems: MenuItem[] = [
       },
       {
         title: "Docs",
-        link: "/docs",
+        link: "https://docs.monark.exchange/",
+        external: "https://docs.monark.exchange/",
         active: [PATHS.DOCS],
         icon: (
           <svg
@@ -134,6 +138,10 @@ function NavigationMenu({ children, setNavlinkClasses }: NavigationMenuProps) {
   const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
   const dropdownMenuRef = useRef<HTMLDivElement | null>(null);
   let closeTimeout: NodeJS.Timeout | null = null;
+  const isExternal = (url : string) => {
+    return url.startsWith('http://') || url.startsWith('https://');
+  };
+
 
   const handleMouseEnter = () => {
     if (closeTimeout !== null) {
@@ -211,7 +219,14 @@ function NavigationMenu({ children, setNavlinkClasses }: NavigationMenuProps) {
                   ? "cursor-not-allowed text-[#323236]"
                   :  setNavlinkClasses(subLink.active)
               } py-2 px-4 rounded-3xl font-semibold select-none duration-200 flex`}
-              onClick={(e) => subLink.isActive && e.preventDefault()}
+              onClick={(e) => {
+                if (subLink.isActive) {
+                  e.preventDefault();
+                } else if (subLink.link && isExternal(subLink.link)) {
+                  window.open(subLink.link, '_blank', 'noopener,noreferrer');
+                  e.preventDefault();
+                }
+              }}
             >
               {subLink.title}
               {subLink?.icon && (

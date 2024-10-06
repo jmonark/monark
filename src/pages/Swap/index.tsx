@@ -14,7 +14,7 @@ const SwapPage = () => {
                 <div className="flex flex-col gap-2">
                     {/* <IntegralPools /> */}
 
-                   {/* <div className="flex flex-col gap-1 w-full bg-card border border-card-border p-2 rounded-3xl"> */}
+                    {/* <div className="flex flex-col gap-1 w-full bg-card border border-card-border p-2 rounded-3xl"> */}
                    <div className="flex flex-col gap-1 w-full bg-[#151419] border border-[#FBFBFB] p-2 rounded-3xl">
                         <SwapPair />
                         <SwapParams />

@@ -4,7 +4,7 @@ import {
     HoverCardTrigger,
 } from '@/components/ui/hover-card';
 import TokenRatio from '../TokenRatio';
-import { Currency } from '@cryptoalgebra/integral-sdk';
+import { Currency } from '@cryptoalgebra/sdk';
 import { IDerivedMintInfo } from '@/state/mintStore';
 import { usePositionAPR } from '@/hooks/positions/usePositionAPR';
 import { getPoolAPR } from '@/utils/pool/getPoolAPR';
@@ -63,8 +63,8 @@ const AmountsSection = ({
                     </div>
                 </HoverCardContent>
             </HoverCard>
-               {/* <div className="flex justify-between bg-card-dark p-2 px-3 rounded-xl"> */}
-               <div className="flex justify-between bg-[#323236] p-2 px-3 rounded-xl">
+            {/* <div className="flex justify-between bg-card-dark p-2 px-3 rounded-xl"> */}
+            <div className="flex justify-between bg-[#323236] p-2 px-3 rounded-xl">
                 <div>
                     <div className="text-xs font-bold">
                         ESTIMATED POSITION APR

@@ -17,8 +17,8 @@ const PoolsPage = () => {
             </div>
 
             <div className="w-full lg:gap-8 mt-8 lg:mt-16">
-                 {/* <div className="pb-5 bg-card border border-card-border/60 rounded-3xl"> */}
-                 <div className="pb-5 bg-[#151419] border border-[#FBFBFB] rounded-3xl">
+                {/* <div className="pb-5 bg-card border border-card-border/60 rounded-3xl"> */}
+                <div className="pb-5 bg-[#151419] border border-[#FBFBFB] rounded-3xl">
                     <PoolsList />
                 </div>
             </div>

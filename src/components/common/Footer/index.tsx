@@ -177,11 +177,11 @@ const items: {
       //   },
       {
         label: "Business Contact",
-        href: "mailto:monark@protonmail.com",
+        href: "mailto:monark.exchange@protonmail.com",
       },
       {
         label: "Whitepaper",
-        href: "https://docs.tropicalswap.exchange/",
+        href: "https://docs.monark.exchange/",
       },
       /*{
             label: t("Brand"),
@@ -200,17 +200,17 @@ const items: {
   {
     label: "Help",
     items: [
-      {
-        label: "Support",
-        href: "https://discord.gg/fy2588h62c",
-      },
+      // {
+      //   label: "Support",
+      //   href: "https://discord.gg/fy2588h62c",
+      // },
       {
         label: "Guides",
-        href: "https://docs.tropicalswap.exchange/tropicalswap-intro/get-started",
+        href: "https://docs.monark.exchange/connect-wallet",
       },
       {
         label: "Github",
-        href: "https://github.com/orgs/TropicalSwap-Organization/repositories",
+        href: "",
       },
     ],
   },

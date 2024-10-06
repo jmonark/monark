@@ -1,6 +1,6 @@
 import { useNeedAllowance } from "@/hooks/common/useNeedAllowance";
 import { IDerivedMintInfo, useMintState, useMintActionHandlers } from "@/state/mintStore";
-import { Currency,  Field, } from "@cryptoalgebra/integral-sdk";
+import { Currency,  Field, } from "@cryptoalgebra/sdk";
 import { useEffect, useMemo } from "react";
 import EnterAmountCard from "../EnterAmountsCard";
 import { ALGEBRA_POSITION_MANAGER } from "@/constants/addresses";
@@ -89,8 +89,8 @@ const EnterAmounts = ({ currencyA, currencyB, mintInfo }: EnterAmountsProps) => 
           error={currencyAError}
         />
         {mintInfo.depositADisabled && (
-           // <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
-           <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
+          // <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
+            <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
             For selected range this deposit is disabled
           </div>
         )}
@@ -105,8 +105,8 @@ const EnterAmounts = ({ currencyA, currencyB, mintInfo }: EnterAmountsProps) => 
           error={currencyBError}
         />
         {mintInfo.depositBDisabled && (
-            // <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
-            <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
+          // <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
+          <div className="absolute left-0 top-0 flex items-center justify-center w-full h-full bg-card-dark/70 rounded-3xl">
             For selected range this deposit is disabled
           </div>
         )}

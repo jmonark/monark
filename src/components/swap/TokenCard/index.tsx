@@ -3,7 +3,7 @@ import TokenSelectorModal from '@/components/modals/TokenSelectorModal';
 import { Input } from '@/components/ui/input';
 import { formatBalance } from '@/utils/common/formatBalance';
 import { formatUSD } from '@/utils/common/formatUSD';
-import { Currency, Percent } from '@cryptoalgebra/integral-sdk';
+import { Currency, Percent } from '@cryptoalgebra/sdk';
 import { ChevronRight } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { Address, useAccount, useBalance } from 'wagmi';
@@ -65,8 +65,8 @@ const TokenCard = ({
     };
 
     return (
-         // <div className="flex w-full px-4 py-6 bg-card-dark rounded-2xl">
-         <div className="flex w-full px-4 py-6 bg-[#323236] rounded-2xl">
+        // <div className="flex w-full px-4 py-6 bg-card-dark rounded-2xl">
+        <div className="flex w-full px-4 py-6 bg-[#323236] rounded-2xl">
             <div className="flex flex-col gap-2 min-w-fit">
                 <TokenSelectorModal
                     showNativeToken={showNativeToken}
@@ -76,7 +76,7 @@ const TokenCard = ({
                     otherCurrency={otherCurrency}
                 >
                     <button
-                       // className="flex items-center gap-4 px-3 py-1 w-fit bg-card rounded-xl hover:bg-card-hover"
+                        // className="flex items-center gap-4 px-3 py-1 w-fit bg-card rounded-xl hover:bg-card-hover"
                         className="flex items-center gap-4 px-3 py-1 w-fit bg-[#151419] rounded-xl hover:bg-card-hover"
                         onClick={() => setIsOpen(true)}
                     >

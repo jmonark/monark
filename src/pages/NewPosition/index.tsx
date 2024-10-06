@@ -10,7 +10,7 @@ import {
     useMintState,
     useRangeHopCallbacks,
 } from '@/state/mintStore';
-import { Bound, INITIAL_POOL_FEE } from '@cryptoalgebra/integral-sdk';
+import { Bound } from '@cryptoalgebra/sdk';
 import { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Address } from 'wagmi';
@@ -38,7 +38,7 @@ const NewPositionPage = () => {
         currencyA ?? undefined,
         currencyB ?? undefined,
         poolAddress,
-        INITIAL_POOL_FEE,
+        100,
         currencyA ?? undefined,
         undefined
     );
@@ -158,8 +158,8 @@ const NewPositionPage = () => {
                     <h2 className="font-semibold text-2xl text-left mb-6 leading-[44px]">
                         2. Enter Amounts
                     </h2>
-                  {/* <div className="flex flex-col w-full h-full gap-2 bg-card border border-card-border rounded-3xl p-2"> */}
-                  <div className="flex flex-col w-full h-full gap-2 bg-[#151419] border border-[#FBFBFB] rounded-3xl p-2">
+                    {/* <div className="flex flex-col w-full h-full gap-2 bg-card border border-card-border rounded-3xl p-2"> */}
+                    <div className="flex flex-col w-full h-full gap-2 bg-[#151419] border border-[#FBFBFB] rounded-3xl p-2">
                         <AmountsSection
                             currencyA={currencyA}
                             currencyB={currencyB}

@@ -1,7 +1,7 @@
 // import { formatNumber } from "app/functions"
 import { BarChart, ResponsiveContainer, XAxis, Bar, Cell, Tooltip } from 'recharts'
 import { useState } from 'react'
-import { Currency } from "@cryptoalgebra/integral-sdk";
+import { Currency } from "@cryptoalgebra/sdk";
 
 interface CustomBarProps {
     x: number;
@@ -44,7 +44,7 @@ const CustomBar = ({
         <g>
             <defs>
                 <linearGradient id='colorUv' x1='0' y1='0' x2='0' y2='100%'>
-                <stop offset='0' stopColor='#297ff' />
+                    <stop offset='0' stopColor='#297ff' />
                     <stop offset='1' stopColor='rgba(35, 133, 222, 0.05)' />
                 </linearGradient>
             </defs>

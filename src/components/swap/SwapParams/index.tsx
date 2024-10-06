@@ -5,7 +5,7 @@ import { useDerivedSwapInfo, useSwapState } from "@/state/swapStore";
 import { SwapField } from "@/types/swap-field";
 import { TradeState } from "@/types/trade-state";
 import { computeRealizedLPFeePercent, warningSeverity } from "@/utils/swap/prices";
-import { Currency, Percent, Trade, TradeType, unwrappedToken } from "@cryptoalgebra/integral-sdk";
+import { Currency, Percent, Trade, TradeType, unwrappedToken } from "@cryptoalgebra/sdk";
 import { ChevronDownIcon, ChevronRightIcon, ZapIcon } from "lucide-react";
 import { Fragment, useMemo, useState } from "react";
 
@@ -49,8 +49,8 @@ const SwapParams = () => {
     return trade ? (
         <div className="rounded text-white">
             <div className="flex justify-between">
-                 {/* <button className="flex items-center w-full text-md mb-1 text-center text-white bg-card-dark py-1 px-3 rounded-lg" onClick={() => toggleExpanded(!isExpanded)}> */}
-                 <button className="flex items-center w-full text-md mb-1 text-center text-white bg-[#323236] py-1 px-3 rounded-lg" onClick={() => toggleExpanded(!isExpanded)}> 
+                {/* <button className="flex items-center w-full text-md mb-1 text-center text-white bg-card-dark py-1 px-3 rounded-lg" onClick={() => toggleExpanded(!isExpanded)}> */}
+                <button className="flex items-center w-full text-md mb-1 text-center text-white bg-[#323236] py-1 px-3 rounded-lg" onClick={() => toggleExpanded(!isExpanded)}> 
                     {adaptiveFee && (
                         <div className="rounded select-none pointer px-1.5 py-1 flex items-center relative">
                             {dynamicFeePlugin && <ZapIcon className="mr-2" strokeWidth={1} stroke="white" fill="white" size={16} />}
@@ -99,11 +99,12 @@ const SwapParams = () => {
             </div>
         </div>
     ) : trade !== undefined || tradeState.state === TradeState.LOADING ? (
-         // <div className="flex justify-center mb-1 bg-card-dark py-3 px-3 rounded-lg">
-         <div className="flex justify-center mb-1 bg-[#323236] py-3 px-3 rounded-lg">
+        // <div className="flex justify-center mb-1 bg-card-dark py-3 px-3 rounded-lg">
+            <div className="flex justify-center mb-1 bg-[#323236] py-3 px-3 rounded-lg">
             <Loader size={17} />
         </div>
-    ) :  // <div className="text-md mb-1 text-center text-white/70 bg-card-dark py-2 px-3 rounded-lg">
+    ) : 
+    // <div className="text-md mb-1 text-center text-white/70 bg-card-dark py-2 px-3 rounded-lg">
     <div className="text-md mb-1 text-center text-white/70 bg-[#323236] py-2 px-3 rounded-lg">
         Select an amount for swap
     </div>;

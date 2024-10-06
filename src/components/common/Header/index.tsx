@@ -136,7 +136,8 @@ const Account = () => {
             >
               <Loader />
               <span>{pendingTxCount}</span>
-              <span>Pending</span>
+              {/* <span>Pending</span> */}
+              <span>Tx</span>
             </Button>
           ) : (
             <Button

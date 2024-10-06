@@ -434,6 +434,7 @@ const Stats = () => {
             </span>
           </div>
       <div className="text-white font-mitr font-bold lg:text-[65px] lg:leading-[55px] text-[25px] mb-8">
+
       </div>
       {/* <div className="text-[#FFBF00] font-mitr mb-8 font-bold lg:text-[65px] lg:leading-[55px] text-[25px]">
         Unmatched simplicity

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Price, Token } from "@cryptoalgebra/integral-sdk";
+import { Price, Token } from "@cryptoalgebra/sdk";
 import { useMintState } from "@/state/mintStore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,7 +76,7 @@ const RangeSelectorPart = ({
                     size={'sm'}
                     onClick={handleDecrement} 
                     disabled={decrementDisabled || disabled}
-                   // className="border border-card-border rounded-xl rounded-r-none"
+                    // className="border border-card-border rounded-xl rounded-r-none"
                     className="border border-[#FBFBFB] rounded-xl rounded-r-none"
                 >
                     -
@@ -93,7 +93,7 @@ const RangeSelectorPart = ({
                         updateSelectedPreset(null)
                     }}
                     placeholder={'0.00'}
-                   // className="w-full bg-card-dark border-y border-x-0 border-card-border rounded-none text-sm h-[36px]"
+                    // className="w-full bg-card-dark border-y border-x-0 border-card-border rounded-none text-sm h-[36px]"
                     className="w-full bg-[#323236] border-y border-x-0 border-[#FBFBFB] rounded-none text-sm h-[36px]"
                 />
 

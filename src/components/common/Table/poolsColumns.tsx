@@ -52,7 +52,8 @@ const PoolPair = ({ pair, fee }: Pool) => {
                 <Skeleton className="h-[20px] w-[90px] bg-card" />
             )}
 
-            <div className="bg-muted-primary text-primary-text rounded-xl px-2 py-1">{`${fee}%`}</div>
+            {/* <div className="bg-muted-primary text-primary-text rounded-xl px-2 py-1">{`${fee}%`}</div> */}
+            <div className="bg-[#F56E0F]/[0.3] text-[#F56E0F] rounded-xl px-2 py-1">{`${fee}%`}</div>
         </div>
     );
 };

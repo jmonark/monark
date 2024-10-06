@@ -79,6 +79,7 @@ const HomePage = () => {
       {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 mt-8 lg:mt-16">
         <div className="flex flex-col gap-2">
         </div>
+
       </div> */}
       <div className="my-[10rem] ">
         {/* <Swiper
@@ -160,10 +161,11 @@ const HomePage = () => {
               V4 AMM DEX{" "}
             </span>
             <span className="text-white lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
-              On Rootstock.
+              on Rootstock.
             </span>
           </div>
           {/* <div className="text-white lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold mb-12 flex text-left">
+
           </div> */}
           <div className="text-white font-mitr text-[16px] leading-[22px] mb-6 lg:mr-[10rem] mr-0 flex text-left">
             Step into the future of decentralized finance with Monark, where
@@ -177,6 +179,7 @@ const HomePage = () => {
               <Button
                 className="group w-full lg:w-fit mb-4 lg:mb-0 lg:ml-4 lg:mt-0 mt-4 border border-[#F56E0F] flex items-center text-md text-center text-[#F56E0F] bg-[#151419] py-[7px] px-3 rounded-full hover:text-white"
                 onClick={() => (window.location.href = "/swap")}
+                
               >
                 Swap Now
                 <svg
@@ -192,7 +195,10 @@ const HomePage = () => {
               </Button>
               <Button
                 className="group w-full lg:w-fit lg:ml-4 border border-[#F56E0F] flex items-center text-md text-center text-[#F56E0F] bg-[#151419] py-[7px] px-3 rounded-full hover:text-white"
-                onClick={() => (window.location.href = "/swap")}
+                // onClick={() => (window.location.href = "/swap")}
+                onClick={() =>
+                  window.open("https://docs.monark.exchange/", "_blank")
+                }
               >
                 Learn
                 <svg
@@ -257,7 +263,10 @@ const HomePage = () => {
               </Button>
               <Button
                 className="group w-fit ml-4 border-2 border-[#FBFBFB] flex items-center text-md text-center text-[#FBFBFB] bg-transparent py-[7px] px-3 rounded-full"
-                onClick={() => (window.location.href = "/swap")}
+                // onClick={() => (window.location.href = "https://docs.monark.exchange/v4-exchange")}
+                onClick={() =>
+                  window.open("https://docs.monark.exchange/v4-exchange", "_blank")
+                }
               >
                 Learn
                 <svg
@@ -305,7 +314,10 @@ const HomePage = () => {
                 </button>
                 <Button
                   className="group w-fit ml-4 border-2 border-[#151419] flex items-center text-md text-center text-[#151419] bg-transparent py-[7px] px-3 rounded-full"
-                  onClick={() => (window.location.href = "/swap")}
+                  // onClick={() => (window.location.href = "/swap")}
+                  onClick={() =>
+                    window.open("https://docs.monark.exchange/usdmnrk-tokenomics", "_blank")
+                  }
                 >
                   Learn
                   <svg
@@ -366,8 +378,11 @@ const HomePage = () => {
               {!account &&<w3m-button balance={"hide"} />}
             </div>
             <div className="flex justify-center">
-              <button className="lg:mt-0 mt-4 flex items-center border border-black text-black font-semibold py-2 px-4 rounded-full">
+              <button className="lg:mt-0 mt-4 flex items-center border border-black text-black font-semibold py-2 px-4 rounded-full"   onClick={() =>
+                    window.open("https://docs.monark.exchange/connect-wallet", "_blank")
+                  }>
                 Learn how to start
+
                 <svg
                   width="18"
                   height="18"

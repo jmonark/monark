@@ -3,7 +3,7 @@ import PageTitle from '@/components/common/PageTitle';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useCurrency } from '@/hooks/common/useCurrency';
 import { formatPercent } from '@/utils/common/formatPercent';
-import { Pool } from '@cryptoalgebra/integral-sdk';
+import { Pool } from '@cryptoalgebra/sdk';
 import { Address } from 'viem';
 
 interface PoolHeaderProps {
@@ -28,11 +28,11 @@ const PoolHeader = ({ pool }: PoolHeaderProps) => {
                     className="-ml-2"
                 />
             </div>
-
+            
             {currencyA && currencyB ? (
                 <PageTitle title={`${currencyA.symbol} / ${currencyB.symbol}`}>
-              {/* <span className="hidden sm:inline px-3 py-2 bg-muted-primary text-primary-text font-semibold rounded-2xl">{`${poolFee}`}</span> */}
-              <span className="hidden sm:inline px-3 py-2 bg-[#F56E0F]/[0.3] text-[#F56E0F] font-semibold rounded-2xl">{`${poolFee}`}</span>
+                    {/* <span className="hidden sm:inline px-3 py-2 bg-muted-primary text-primary-text font-semibold rounded-2xl">{`${poolFee}`}</span> */}
+                    <span className="hidden sm:inline px-3 py-2 bg-[#F56E0F]/[0.3] text-[#F56E0F] font-semibold rounded-2xl">{`${poolFee}`}</span>
                 </PageTitle>
             ) : (
                 <Skeleton className="w-[200px] h-[40px] bg-card" />
