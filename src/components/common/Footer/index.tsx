@@ -116,7 +116,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ ...props }) => {
         className="lg:mr-4 mr-auto"
         onMouseEnter={() => setShowSoon(true)}
         onMouseLeave={() => setShowSoon(false)}
-        onClick={() => window.open("https://discord.gg/h9eEzHJa", "_blank")}
+        // onClick={() => window.open("https://discord.gg/h9eEzHJa", "_blank")}
       >
         <svg
           width="32"
