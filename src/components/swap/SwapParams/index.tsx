@@ -106,7 +106,7 @@ const SwapParams = () => {
     ) : 
     // <div className="text-md mb-1 text-center text-white/70 bg-card-dark py-2 px-3 rounded-lg">
     <div className="text-md mb-1 text-center text-white/70 bg-[#323236] py-2 px-3 rounded-lg">
-        Select an amount for swap
+        Select an amount to swap
     </div>;
 }
 

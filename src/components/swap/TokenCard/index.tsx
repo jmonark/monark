@@ -76,8 +76,8 @@ const TokenCard = ({
                     otherCurrency={otherCurrency}
                 >
                     <button
-                        // className="flex items-center gap-4 px-3 py-1 w-fit bg-card rounded-xl hover:bg-card-hover"
-                        className="flex items-center gap-4 px-3 py-1 w-fit bg-[#151419] rounded-xl hover:bg-card-hover"
+                        // className="flex items-center gap-4 px-3 py-1 w-fit bg-card rounded-xl hover:bg-[#201F24]"
+                        className="flex items-center gap-4 px-3 py-1 w-fit bg-[#151419] rounded-xl hover:bg-[#201F24]"
                         onClick={() => setIsOpen(true)}
                     >
                         <CurrencyLogo currency={currency} size={32} />

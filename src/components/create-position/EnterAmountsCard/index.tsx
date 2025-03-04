@@ -67,12 +67,12 @@ const EnterAmountCard = ({
 
     <div className="flex flex-col items-end w-full">
       <Input 
-        value={value} 
-        id={`amount-${currency?.symbol}`} 
-        onUserInput={v => handleInput(v)}
-        className={`text-right border-none text-xl font-bold w-9/12 p-0`} 
-        placeholder={'0.0'}
-        maxDecimals={currency?.decimals}
+      value={value} 
+      id={`amount-${currency?.symbol}`} 
+      onUserInput={v => handleInput(v)}
+      className={`text-right border-none text-xl font-bold w-9/12 p-0 bg-[#4D4D52] pr-2 placeholder-[#A3A3A3] text-[#FBFBFB]`} 
+      placeholder={'0.0'}
+      maxDecimals={currency?.decimals}
        />
       {/* <div className="text-sm">{fiatValue && formatUSD.format(fiatValue)}</div> */}
     </div>

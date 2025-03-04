@@ -88,7 +88,7 @@ const IntegralPoolsListItem = memo(({ pool, onPoolSelect }: { pool: PoolFieldsFr
         onPoolSelect()
     }
 
-    return <div className="flex items-center gap-4 min-h-[40px] text-white px-2 py-1 rounded-2xl whitespace-nowrap cursor-pointer hover:bg-card-hover duration-200" onClick={selectPool}>
+    return <div className="flex items-center gap-4 min-h-[40px] text-white px-2 py-1 rounded-2xl whitespace-nowrap cursor-pointer hover:bg-[#201F24] duration-200" onClick={selectPool}>
         <div className="flex">
             <CurrencyLogo currency={currencyA} size={25} />
             <CurrencyLogo currency={currencyB} size={25} style={{marginLeft: '-8px'}} />

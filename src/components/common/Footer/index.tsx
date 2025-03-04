@@ -110,10 +110,10 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ ...props }) => {
           />
         </svg>
       </div> */}
-   <div className="relative">
+   <div className="relative lg:mr-4 mr-auto">
       {/* Bouton Discord */}
       <div
-        className="lg:mr-4 mr-auto"
+        // className="lg:mr-4 mr-auto"
         onMouseEnter={() => setShowSoon(true)}
         onMouseLeave={() => setShowSoon(false)}
         // onClick={() => window.open("https://discord.gg/h9eEzHJa", "_blank")}
@@ -165,7 +165,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ ...props }) => {
 
       {/*medium*/}
       <div
-        className="lg:mr-4 mr-auto"
+        className=""
         onClick={() =>
           window.open("https://medium.com/@monark.exchange", "_blank")
         }
@@ -331,7 +331,7 @@ const Footer = () => {
           ))}
           <div className="hidden lg:flex flex-col justify-end h-full">
             {/* <div className="mb-12">
-              <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-[#151419] rounded-3xl hover:bg-card-hover duration-200">
+              <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-[#151419] rounded-3xl hover:bg-[#201F24] duration-200">
                 <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full">
                   <img src={MonarkLogo} width={35} height={35} />
                 </div>

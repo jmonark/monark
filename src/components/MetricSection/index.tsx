@@ -427,7 +427,7 @@ const Stats = () => {
     <div className="mb-[10rem]">
               <div className="items-center mb-4">
             <span className="text-white lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
-            Defi on{" "}
+            DeFi on{" "}
             </span>
             <span className="text-[#F56E0F] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
             Bitcoin

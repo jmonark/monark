@@ -148,8 +148,8 @@ const SwapPair = () => {
                 showBalance={true}
             />
             <button
-                // className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1.5 bg-card-dark w-fit rounded-full border-[5px] border-[#1a1d2b] hover:bg-card-hover duration-200"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1.5 bg-[#323236] w-fit rounded-full border-[5px] border-[#151419] hover:bg-card-hover duration-200"
+                // className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1.5 bg-card-dark w-fit rounded-full border-[5px] border-[#1a1d2b] hover:bg-[#201F24] duration-200"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1.5 bg-[#323236] w-fit rounded-full border-[5px] border-[#151419] hover:bg-[#201F24] duration-200"
                 onClick={onSwitchTokens}
             >
                 <ChevronsUpDownIcon size={16} />

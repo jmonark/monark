@@ -133,8 +133,8 @@ const TokenRow = ({
   return (
     <button
       disabled={lock}
-      // className="flex items-center justify-between w-full py-2 px-3 text-left bg-card rounded-2xl duration-75 hover:bg-card-hover disabled:hover:bg-card disabled:opacity-60"
-      className="flex items-center justify-between w-full py-2 px-3 text-left bg-[#151419] rounded-2xl duration-75 hover:bg-card-hover disabled:hover:bg-card disabled:opacity-60"
+      // className="flex items-center justify-between w-full py-2 px-3 text-left bg-card rounded-2xl duration-75 hover:bg-[#201F24] disabled:hover:bg-card disabled:opacity-60"
+      className="flex items-center justify-between w-full py-2 px-3 text-left bg-[#151419] rounded-2xl duration-75 hover:bg-[#201F24] disabled:hover:bg-card disabled:opacity-60"
       onClick={() => currency && onSelect(currency)}
       style={{ ...style, height: 76 - 16 }}
     >

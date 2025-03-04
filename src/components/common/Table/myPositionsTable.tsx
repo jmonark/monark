@@ -168,7 +168,7 @@ const MyPositionsTable = <TData, TValue>({
                                 action || link
                                     ? isSelected
                                         ? 'hover:bg-muted-primary'
-                                        : 'hover:bg-card-hover'
+                                        : 'hover:bg-[#201F24]'
                                     : 'hover:bg-card-dark'
                             } ${
                                 isStatusActive &&

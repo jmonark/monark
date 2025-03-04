@@ -242,11 +242,11 @@ function NavigationMenu({ children, setNavlinkClasses }: NavigationMenuProps) {
 const Navigation = () => {
   const { pathname } = useLocation();
 
-  // const setNavlinkClasses = (paths: string[]) => paths.some((path) => matchPath(path, pathname)) ? "text-primary-text bg-muted-primary" : "hover:bg-card-hover";
+  // const setNavlinkClasses = (paths: string[]) => paths.some((path) => matchPath(path, pathname)) ? "text-primary-text bg-muted-primary" : "hover:bg-[#201F24]";
   const setNavlinkClasses = (paths: string[]) =>
     paths.some((path) => matchPath(path, pathname))
       ? "text-[#F56E0F] md:bg-[#F56E0F]/[0.2]"
-      : "hover:bg-card-hover";
+      : "hover:bg-[#201F24]";
 
   return (
     <div>

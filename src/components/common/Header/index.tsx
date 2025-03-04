@@ -48,8 +48,8 @@ const Header = () => (
 const Algebra = () => (
   <div className="flex items-center gap-2">
     <NavLink to={"/"}>
-      {/* <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-card rounded-3xl hover:bg-card-hover duration-200"> */}
-      <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-[#151419] rounded-3xl hover:bg-card-hover duration-200">
+      {/* <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-card rounded-3xl hover:bg-[#201F24] duration-200"> */}
+      <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-[#151419] rounded-3xl hover:bg-[#201F24] duration-200">
         {/* <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full"> */}
           
           {/* <img src={AlgebraLogo} width={25} height={25} /> */}
@@ -85,7 +85,7 @@ const Account = () => {
 
   const { selectedNetworkId } = useWeb3ModalState();
 
-  if (selectedNetworkId !== DEFAULT_CHAIN_ID)
+  if (Number(selectedNetworkId) !== DEFAULT_CHAIN_ID)
     return (
       <div className="flex justify-end">
         <Button
@@ -114,7 +114,7 @@ const Account = () => {
     );
 
   return (
-    <div className="flex h-full justify-end gap-4 whitespace-nowrap">
+    <div className="flex h-full justify-end gap-4 whitespace-nowrap items-center">
       {/* <div className="max-xl:hidden"> */}
         <w3m-network-button />
       {/* </div> */}

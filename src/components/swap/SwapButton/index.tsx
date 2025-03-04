@@ -116,7 +116,7 @@ const SwapButton = () => {
 
     const priceImpactTooHigh = priceImpactSeverity > 3 && !isExpertMode;
 
-    const isWrongChain = selectedNetworkId !== DEFAULT_CHAIN_ID;
+    const isWrongChain = selectedNetworkId !== DEFAULT_CHAIN_ID.toString();
 
     if (!account) return <Button onClick={() => open()}>Connect Wallet</Button>;
 

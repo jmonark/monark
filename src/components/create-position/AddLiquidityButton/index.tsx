@@ -131,7 +131,7 @@ export const AddLiquidityButton = ({
         `/pool/${poolAddress}`
     );
 
-    const isWrongChain = selectedNetworkId !== DEFAULT_CHAIN_ID;
+    const isWrongChain = selectedNetworkId !== String(DEFAULT_CHAIN_ID);
 
     if (!account) return <Button onClick={() => open()}>Connect Wallet</Button>;
 

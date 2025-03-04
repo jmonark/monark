@@ -172,7 +172,7 @@ const MarketDepthChart = ({ currencyA, currencyB, isOpen, close }: MarketDepthCh
         <div className="flex flex-col lg:flex-row w-full h-full">
 
             <button
-                className="h-full z-[99] p-1 bg-card-dark border-x border-card-border hover:bg-card-hover"
+                className="h-full z-[99] p-1 bg-card-dark border-x border-card-border hover:bg-[#201F24]"
                 onClick={close}
             >
                 <ArrowRightIcon size={'20px'} className="rotate-180 lg:rotate-0" />

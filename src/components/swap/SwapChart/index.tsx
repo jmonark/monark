@@ -298,7 +298,7 @@ const SwapChart = () => {
             <Popover open={isPoolSwitcherOpen}>
                 <PopoverTrigger
                     onMouseDown={() => setIsPoolSwitcherOpen(v => !v)}
-                    className="flex items-center justify-between w-fit min-w-[240px] py-2 px-4 rounded-3xl bg-card border border-card-border hover:bg-card-hover duration-200">
+                    className="flex items-center justify-between w-fit min-w-[240px] py-2 px-4 rounded-3xl bg-card border border-card-border hover:bg-[#201F24] duration-200">
                     <div className="flex items-center gap-4 font-semibold">
                         <span className="flex">{pairImage}</span>
                         <span>{pairTitle}</span>
@@ -315,7 +315,7 @@ const SwapChart = () => {
                         {
                             pairSelectorList?.map((item) => <div
                                 key={`chart-pair-selector-item-${item.pair}`}
-                                className="flex items-center gap-2 min-h-[40px] text-white font-semibold p-2 px-4 rounded-2xl cursor-pointer hover:bg-card-hover duration-200"
+                                className="flex items-center gap-2 min-h-[40px] text-white font-semibold p-2 px-4 rounded-2xl cursor-pointer hover:bg-[#201F24] duration-200"
                                 onClick={() => {
                                     setChartPair(item.pair)
                                     setIsPoolSwitcherOpen(false)
