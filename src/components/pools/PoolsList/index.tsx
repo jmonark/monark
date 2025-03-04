@@ -8,9 +8,31 @@ import PoolsTable from "@/components/common/Table/poolsTable";
 import { usePositions } from "@/hooks/positions/usePositions";
 import { farmingClient } from "@/graphql/clients";
 
+// Add a blacklist array to filter out specific pool IDs
+const BLACKLISTED_POOLS: string[] = [
+  // Add blacklisted pool IDs here
+  "0x6B13607fA48ABe231810a96885C0916d3c0927ed",
+  "0xea104725978e4179a35afa7c53ea8b47feb3b1b8"
+];
+
 const PoolsList = () => {
     const { data: pools, loading: isPoolsListLoading } = usePoolsListQuery();
-
+    
+    // Filter out blacklisted pools
+    const filteredPools = useMemo(() => {
+      if (!pools?.pools) return { pools: [] };
+      
+      return {
+        ...pools,
+        pools: pools.pools.filter(pool => 
+          !BLACKLISTED_POOLS.some(blacklistedId => 
+            blacklistedId.toLowerCase() === pool.id.toLowerCase()
+          )
+        )
+      };
+    }, [pools]);
+    
+    
     const { data: activeFarmings, loading: isFarmingsLoading } = useActiveFarmingsQuery({
         client: farmingClient,
     });
@@ -29,9 +51,9 @@ const PoolsList = () => {
         isFarmingsAPRLoading;
 
     const formattedPools = useMemo(() => {
-        if (isLoading || !pools) return [];
+        if (isLoading || !filteredPools) return [];
 
-        return pools.pools.map(({ id, token0, token1, fee, totalValueLockedUSD, poolDayData }) => {
+        return filteredPools.pools.map(({ id, token0, token1, fee, totalValueLockedUSD, poolDayData }) => {
             const currentPool = poolDayData[0];
             const lastDate = currentPool ? currentPool.date * 1000 : 0;
             const currentDate = new Date().getTime();
@@ -67,7 +89,7 @@ const PoolsList = () => {
                 hasActiveFarming: Boolean(activeFarming),
             };
         });
-    }, [isLoading, pools, positions, activeFarmings, poolsMaxApr, poolsAvgApr, farmingsAPR]);
+    }, [isLoading, filteredPools, positions, activeFarmings, poolsMaxApr, poolsAvgApr, farmingsAPR]);
 
     return (
         <div className="flex flex-col gap-4">

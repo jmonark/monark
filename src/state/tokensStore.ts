@@ -13,6 +13,7 @@ interface TokensState {
     importedTokens: ImportedTokens,
     actions: {
         importToken: (address: Address, symbol: string, name: string, decimals: number, chainId: number) => void;
+        removeToken: (address: Address, chainId: number) => void;
     }
 }
 
@@ -38,5 +39,23 @@ export const useTokensState = create(persist<TokensState>((set, get) => ({
                 }
             })
         },
+        removeToken: (address, chainId) => {
+            const { importedTokens } = get();
+            
+            if (!importedTokens[chainId] || !importedTokens[chainId][address]) {
+                return;
+            }
+            
+            const updatedChainTokens = { ...importedTokens[chainId] };
+            
+            delete updatedChainTokens[address];
+            
+            set({
+                importedTokens: {
+                    ...importedTokens,
+                    [chainId]: updatedChainTokens
+                }
+            });
+        }
     }
 }), { name: 'tokens-storage', storage: createJSONStorage(() => localStorage), merge: (persistedState, currentState) => deepMerge(currentState, persistedState) }))

@@ -17,9 +17,14 @@ export function useAllTokens(showNativeToken: boolean = true) {
 
     const { data: allTokens, loading } = useAllTokensQuery();
 
-    const { importedTokens } = useTokensState();
+    const { importedTokens, actions } = useTokensState();
+    const { removeToken } = actions;
 
-    const tokensBlackList: Address[] = useMemo(() => [], []);
+    const tokensBlackList: Address[] = useMemo(() => [
+        "0x116e699bf25da6d80543850029257c9116692ac2" as Address,
+        "0xa590eb1fb2d4e052a32b1c8401ec70cc4ee88764" as Address, 
+        "0x1a070f70ba0cb496ac937655c69c2c579eb47359" as Address,
+    ], []);
 
     const mergedTokens = useMemo(() => {
         const tokens = new Map<Address, TokenFieldsFragment>();
@@ -59,8 +64,16 @@ export function useAllTokens(showNativeToken: boolean = true) {
             });
         }
 
+        const problematicTokenId = "0x116e699bf25da6d80543850029257c9116692ac2".toLowerCase() as Address;
+        if (tokens.has(problematicTokenId)) {
+            // Remove it from storage
+            removeToken(problematicTokenId, chainId);
+            // Also remove it from the current tokens Map
+            tokens.delete(problematicTokenId);
+        }
+
         return [...tokens].map(([, token]) => ({ ...token }));
-    }, [allTokens, importedTokens, tokensBlackList, chainId, showNativeToken]);
+    }, [allTokens, importedTokens, tokensBlackList, chainId, showNativeToken, removeToken]);
 
     return useMemo(
         () => ({
