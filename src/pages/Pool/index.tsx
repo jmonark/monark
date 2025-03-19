@@ -201,8 +201,9 @@ const PoolPage = () => {
 
     return (
         <PageContainer>
+          
+            <div className="mt-8 lg:mt-16">
             <PoolHeader pool={poolEntity} />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 mt-8 lg:mt-16">
                 <div className="col-span-2">
                     {!account ? (
                         <NoAccount />

@@ -101,7 +101,7 @@ const CreatePoolForm = () => {
     }, [])
 
     return (
-        <div className="flex flex-col gap-1 p-2 bg-card border border-card-border rounded-3xl">
+        <div className="flex flex-col gap-1 p-2 bg-[#151419] border border-[#FBFBFB] rounded-3xl">
             <h2 className="font-semibold text-xl text-left ml-2 mt-2">
                 Select Pair
             </h2>

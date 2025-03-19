@@ -1,9 +1,9 @@
 import {
   ArrowDownUp,
-  BarChart,
+  // BarChart,
   CircleEllipsisIcon,
   Coins,
-  Rocket,
+  // Rocket,
 } from "lucide-react";
 import {  NavLink, matchPath, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -21,7 +21,7 @@ const PATHS = {
 
 interface MenuItem {
   title: string;
-  link: string;
+  link?: string;
   active: string[];
   navIcon?: ReactNode;
   icon?: ReactNode;
@@ -48,32 +48,28 @@ const menuItems: MenuItem[] = [
     active: [PATHS.POOLS],
     navIcon: <Coins className="h-6 w-6" />,
   },
+  // {
+  //   title: "Launchpad",
+  //   link: "/launchpad",
+  //   active: [PATHS.LAUNCHPAD],
+  //   isActive: true,
+  //   navIcon: <Rocket className="h-6 w-6" />,
+  // },
+  // {
+  //   title: "Analytics",
+  //   link: "/analytics",
+  //   isActive: true,
+  //   active: [PATHS.ANALYTICS],
+  //   navIcon: <BarChart className="h-6 w-6" />,
+  // },
   {
-    title: "Launchpad",
-    link: "/launchpad",
-    active: [PATHS.LAUNCHPAD],
-    isActive: true,
-    navIcon: <Rocket className="h-6 w-6" />,
-  },
-  {
-    title: "Analytics",
-    link: "/analytics",
-    isActive: true,
+    title: "Launch Token",
+    link: "https://www.likeaser.fun/",
+    isActive: false,
     active: [PATHS.ANALYTICS],
-    navIcon: <BarChart className="h-6 w-6" />,
-  },
-  {
-    title: "More",
-    icon: <CircleEllipsisIcon className="h-6 w-6" />,
-    link:"",
-    active: [PATHS.MORE],
-    subLinks: [
-      {
-        title: "Bridge",
-        link: "https://powpeg.rootstock.io/",
-        external: "https://docs.monark.exchange/",
-        active: [PATHS.BRIDGE],
-        icon: (
+    external: "https://www.likeaser.fun/",
+    // navIcon: <BarChart className="h-6 w-6" />,
+    icon: (
           <svg
             width="20"
             height="20"
@@ -88,7 +84,56 @@ const menuItems: MenuItem[] = [
             />
           </svg>
         ),
-      },
+  },
+  {
+    title: "Bridge",
+    link: "https://powpeg.rootstock.io/",
+    isActive: false,
+    active: [PATHS.ANALYTICS],
+    // navIcon: <BarChart className="h-6 w-6" />,
+    icon: (
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.25 19.4783H18.4167V25.9783H0V10.8117C0 9.01333 1.4625 7.56167 3.25 7.56167H7.61583C7.13917 8.19 6.78167 8.92667 6.61917 9.72833H3.25C2.65417 9.72833 2.16667 10.2158 2.16667 10.8117V23.8117H16.25V19.4783ZM25.3608 7.10667L18.265 0L16.7375 1.5275L22.7608 7.55083H11.9167C10.1292 7.55083 8.66667 9.01333 8.66667 10.8008V19.4675H10.8333V10.8117C10.8333 10.2158 11.3208 9.72833 11.9167 9.72833H22.75L16.6725 15.8058L18.2 17.3333L25.3608 10.1725C26.2058 9.3275 26.2058 7.95167 25.3608 7.10667Z"
+              //   fill="#F56E0F"
+              fill="#FBFBFB"
+            />
+          </svg>
+        ),
+  },
+  {
+    title: "More",
+    icon: <CircleEllipsisIcon className="h-6 w-6" />,
+    link:"",
+    active: [PATHS.MORE],
+    subLinks: [
+      // {
+      //   title: "Bridge",
+      //   link: "https://powpeg.rootstock.io/",
+      //   external: "https://docs.monark.exchange/",
+      //   active: [PATHS.BRIDGE],
+      //   icon: (
+      //     <svg
+      //       width="20"
+      //       height="20"
+      //       viewBox="0 0 26 26"
+      //       fill="none"
+      //       xmlns="http://www.w3.org/2000/svg"
+      //     >
+      //       <path
+      //         d="M16.25 19.4783H18.4167V25.9783H0V10.8117C0 9.01333 1.4625 7.56167 3.25 7.56167H7.61583C7.13917 8.19 6.78167 8.92667 6.61917 9.72833H3.25C2.65417 9.72833 2.16667 10.2158 2.16667 10.8117V23.8117H16.25V19.4783ZM25.3608 7.10667L18.265 0L16.7375 1.5275L22.7608 7.55083H11.9167C10.1292 7.55083 8.66667 9.01333 8.66667 10.8008V19.4675H10.8333V10.8117C10.8333 10.2158 11.3208 9.72833 11.9167 9.72833H22.75L16.6725 15.8058L18.2 17.3333L25.3608 10.1725C26.2058 9.3275 26.2058 7.95167 25.3608 7.10667Z"
+      //         //   fill="#F56E0F"
+      //         fill="#FBFBFB"
+      //       />
+      //     </svg>
+      //   ),
+      // },
       {
         title: "Docs",
         link: "https://docs.monark.exchange/",
@@ -255,6 +300,7 @@ const Navigation = () => {
           {menuItems.map((item) => (
             <NavLink
               key={`nav-item-${item.link}`}
+              // target={item.external ? "_blank" : ""}
               onClick={(e) => item.isActive && e.preventDefault()}
               to={item.link}
               className={` ${

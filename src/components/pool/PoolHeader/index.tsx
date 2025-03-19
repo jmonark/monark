@@ -19,7 +19,7 @@ const PoolHeader = ({ pool }: PoolHeaderProps) => {
     const poolFee = pool && formatPercent.format(pool.fee / 10_00000);
 
     return (
-        <div className="flex w-full gap-8">
+        <div className="flex w-full gap-8 mb-2">
             <div className="flex">
                 <CurrencyLogo currency={currencyA} size={40} />
                 <CurrencyLogo

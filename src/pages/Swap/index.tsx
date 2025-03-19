@@ -8,14 +8,16 @@ import PoweredByAlgebra from '@/components/common/PoweredByAlgebra';
 const SwapPage = () => {
     return (
         <PageContainer>
-            <PageTitle title={'Swap'} />
+       
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 mt-8 lg:mt-16">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 mt-8 lg:mt-16"> */}
+            <div className="mt-8 lg:mt-16">
                 <div className="flex flex-col gap-2">
                     {/* <IntegralPools /> */}
-
+                    <PageTitle title={'Swap'} />
                     {/* <div className="flex flex-col gap-1 w-full bg-card border border-card-border p-2 rounded-3xl"> */}
                    <div className="flex flex-col gap-1 w-full bg-[#151419] border border-[#FBFBFB] p-2 rounded-3xl">
+             
                         <SwapPair />
                         <SwapParams />
                         <SwapButton />

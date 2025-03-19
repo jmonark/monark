@@ -5,11 +5,15 @@ import MetricSection from "@/components/MetricSection";
 // import Card from "@/components/common/Card";
 // import { Skeleton } from "@/components/ui/skeleton";
 import monarkToken from "@/assets/monark-token.png";
+import rootstock from "@/assets/rootstock.png";
+import algebra from "@/assets/algebra.png";
+import skyrocket from "@/assets/skyrocket.png";
 import monarkLogo from "@/assets/monark-logo.png";
 import monarkMagic from "@/assets/ill-rombi-magic.png";
+import magicWake from "@/assets/magic_wake.png";
 import { useAccount } from "wagmi";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import Autoplay  from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import Autoplay from "swiper";
 
 const HomePage = () => {
   const { address: account } = useAccount();
@@ -75,16 +79,13 @@ const HomePage = () => {
 
   return (
     <>
-      {/* // <PageContainer> */}
-      {/* <PageTitle title={"Home"} showSettings={false} /> */}
+      {/* <PageContainer> */}
 
-      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 mt-8 lg:mt-16">
-        <div className="flex flex-col gap-2">
-        </div>
-
-      </div> */}
-      <div className="my-[10rem] ">
-        {/* <Swiper
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-0 gap-y-8 w-full lg:gap-8 lg:mt-16">
+        <div className="flex flex-col gap-2"></div>
+      </div>
+      <div className="lg:my-[6rem] my-[3rem]">
+        <Swiper
           speed={500}
           autoplay={{
             delay: 2500,
@@ -92,57 +93,47 @@ const HomePage = () => {
             disableOnInteraction: false,
           }}
           loop
-          // modules={[Autoplay]}
           slidesPerView={1}
         >
           <SwiperSlide>
-            <div className="px-4 pb-[6rem] lg:pb-0 flex justify-center items-center"> */}
-        {/* <StyledHeroSection
-              innerProps={{ style: { margin: "0", width: "100%" } }}
-              containerProps={{
-                id: "home-1",
-              }}
-              index={1}
-              hasCurvedDivider={false}
-              className="px-4 pb-[6rem] lg:pb-0 flex justify-center items-center"
-              style={{ background: "#400C8B" }}
-            > */}
-
-        {/* <div className="w-full max-w-[60rem] lg:h-[10rem] h-auto rounded-3xl bg-[#5D5FEF] lg:px-12 px-4 py-2 relative z-20 border border-[#FBFBFB]">
+            <div className="px-4 lg:pb-0 flex justify-center items-center">
+              <div className="w-full max-w-[60rem] lg:h-[227px] h-auto rounded-3xl bg-[#EEEEEE] lg:px-12 lg:p-8 p-4 relative ">
                 <div className="h-full justify-center flex flex-col">
-                  <div className="text-[#FDE736] mb-2 text-[18px] leading-[25px] font-mitr font-bold">
-                    TropicalSwap Launchpad
+                  <div className="text-black mb-2 text-[18px] leading-[25px] font-mitr font-bold lg:text-[50px] lg:leading-[55px] font-mitr">
+                    The first <span className="text-[#F56E0F]">V4 AMM</span> DEX
+                    on Rootstock
                   </div>
-                  <div className="mb-2 lg:text-[30px] lg:leading-[35px] text-[16px] leading-[22px] font-mitr text-white">
-                    LAUNCH WITH US!
+                  <div className="text-black mb-2 text-[18px] leading-[25px] font-mitr font-bold lg:text-[50px] lg:leading-[55px] font-mitr">
+                    is here!
                   </div>
-                  <Button
-                    style={{ background: "#FFBF00", boxShadow: "none" }}
-                    className="w-fit"
-                    onClick={() =>
-                      window.open(
-                        "https://forms.gle/WsGnfLwam9FHUTew7",
-                        "_blank"
-                      )
-                    }
-                  >
-                     Apply now */}
-        {/* <Text
-                      color="#162578"
-                      className="mr-2 text-[#400C8B] font-mitr"
-                      bold
-                      fontSize="16px"
+                  <div className="w-full lg:justify-end justify-center flex">
+                    <Button
+                      className="group w-fit border border-[#615F5F] flex items-center text-md text-center text-[#615F5F] bg-transparent p-[7px] px-3 rounded-full"
+                      onClick={() => (window.location.href = "/pools")}
                     >
-                      Apply now
-                    </Text>
-                    <ArrowForwardIcon color="#162578" /> */}
-        {/* </Button>
+                      Explore Pools
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 26 26"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="ml-2 fill-[#615F5F]  transition-colors duration-300"
+                      >
+                        <path d="M16.25 19.4783H18.4167V25.9783H0V10.8117C0 9.01333 1.4625 7.56167 3.25 7.56167H7.61583C7.13917 8.19 6.78167 8.92667 6.61917 9.72833H3.25C2.65417 9.72833 2.16667 10.2158 2.16667 10.8117V23.8117H16.25V19.4783ZM25.3608 7.10667L18.265 0L16.7375 1.5275L22.7608 7.55083H11.9167C10.1292 7.55083 8.66667 9.01333 8.66667 10.8008V19.4675H10.8333V10.8117C10.8333 10.2158 11.3208 9.72833 11.9167 9.72833H22.75L16.6725 15.8058L18.2 17.3333L25.3608 10.1725C26.2058 9.3275 26.2058 7.95167 25.3608 7.10667Z" />
+                      </svg>
+                    </Button>
+                  </div>
                 </div>
-              </div> */}
-        {/* </StyledHeroSection> */}
-        {/* </div>
+                <img
+                  src={magicWake}
+                  alt=""
+                  className="w-[25rem]  h-[5rem]  hidden lg:flex absolute bottom-8 left-8"
+                />
+              </div>
+            </div>
           </SwiperSlide>
-          </Swiper> */}
+        </Swiper>
       </div>
       <div className=" -ml-8 -mr-8 mb-[10rem]">
         <div className="bg-[#151419] border border-[#FBFBFB] relative w-full max-w-none lg:w-[95%] lg:rounded-tr-[60px] lg:rounded-br-[60px] justify-center xl:py-16 xl:px-56 lg:px-36  py-14 px-8 z-1">
@@ -219,7 +210,11 @@ const HomePage = () => {
               </div>
             </div>
             <div className="hidden lg:block justify-center">
-              <img src={monarkLogo} alt="" className="w-[15rem] h-auto xl:w-[35rem]" />
+              <img
+                src={monarkLogo}
+                alt=""
+                className="w-[15rem] h-auto xl:w-[35rem]"
+              />
             </div>
           </div>
         </div>
@@ -239,13 +234,13 @@ const HomePage = () => {
         <div className="bg-[#151419] border border-[#FBFBFB] lg:w-[95%] w-full lg:rounded-tl-[60px] lg:rounded-bl-[60px]  flex justify-end pt-8 lg:pb-8 py-8 lg-px-20 px-8 relative lg:items-end items-start z-1">
           <div className="grid lg:grid-cols-2 grid-cols-1">
             <div className="xl:flex hidden justify-start items-center">
-              <img src={monarkMagic} alt="" className="w-[30rem] h-[11rem]" />
+              <img src={monarkMagic} alt="" className="w-[40rem] h-[15rem]" />
             </div>
             <div className="max-w-[700px] w-full">
               <div className="  space-x-2 text-left  mb-4">
                 <div className="items-center mb-4 text-left">
                   <span className="text-white lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
-                    A launchpad for{" "}
+                    A catalyst for{" "}
                   </span>
                   <span className="text-[#F56E0F] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
                     innovation
@@ -303,11 +298,131 @@ const HomePage = () => {
 
       <div
         // className="flex justify-start lg:pb-18  pb-28 overflow-hidden"
-        className="-ml-8 -mr-8"
+        className="-ml-8 -mr-8  mb-[10rem]"
       >
-        <div className=" bg-[#FFAE74] border border-[#FBFBFB] lg:w-[85%] w-full lg:rounded-tr-[60px] lg:rounded-br-[60px] flex flex-col justify-center  py-12 lg:pl-56 px-8 relative items-start">
+        <div className=" bg-[#EEEEEE] lg:w-[85%] w-full lg:rounded-tr-[60px] lg:rounded-br-[60px] flex flex-col justify-center  py-8 lg:pl-56 px-8 relative items-start">
           <div className="grid lg:grid-cols-3 grid-cols-1">
             <div className="lg:max-w-[900px] w-full col-span-2">
+              <div className="w-full">
+                <div className="flex items-center space-x-2">
+                  <div className="text-[black] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
+                    Launch your token with
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="text-[#F56E0F] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold mb-4">
+                    likeaser.fun
+                  </div>
+                </div>
+              </div>
+              <div className="text-[#151419] font-mitr text-[16px] leading-[22px] w-full text-left mb-8">
+                Powered by Monark, likeaser.fun is the ultimate do-it-yourself
+                token factory, where anyone can create their own token, set up a
+                launchpad, and invite the world to join the ride.
+              </div>
+              <div className="flex">
+                {/* <button className="bg-[#151419] text-[#F56E0F] font-bold py-2 px-4 rounded-full"> */}
+                <Button
+                  className="group w-fit border border-[#F56E0F] flex items-center text-md text-center text-[#F56E0F] bg-transparent py-[7px] px-3 rounded-full"
+                  // onClick={() => (window.location.href = "/swap")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.likeaser.fun/ ",
+                      "_blank"
+                    )
+                  }
+                >
+                  Go to likeaser.fun
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="ml-2 fill-[#F56E0F]  transition-colors duration-300"
+                  >
+                    <path d="M16.25 19.4783H18.4167V25.9783H0V10.8117C0 9.01333 1.4625 7.56167 3.25 7.56167H7.61583C7.13917 8.19 6.78167 8.92667 6.61917 9.72833H3.25C2.65417 9.72833 2.16667 10.2158 2.16667 10.8117V23.8117H16.25V19.4783ZM25.3608 7.10667L18.265 0L16.7375 1.5275L22.7608 7.55083H11.9167C10.1292 7.55083 8.66667 9.01333 8.66667 10.8008V19.4675H10.8333V10.8117C10.8333 10.2158 11.3208 9.72833 11.9167 9.72833H22.75L16.6725 15.8058L18.2 17.3333L25.3608 10.1725C26.2058 9.3275 26.2058 7.95167 25.3608 7.10667Z" />
+                  </svg>
+                </Button>
+                {/* <Button
+                  className="group w-fit ml-4 border border-[#F56E0F] flex items-center text-md text-center text-[#F56E0F] bg-transparent py-[7px] px-3 rounded-full"
+                  // onClick={() => (window.location.href = "/swap")}
+                  onClick={() =>
+                    window.open(
+                      "https://docs.monark.exchange/usdmnrk-tokenomics",
+                      "_blank"
+                    )
+                  }
+                >
+                  How it works
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="ml-2 fill-[#F56E0F]  transition-colors duration-300"
+                  >
+                    <path d="M16.25 19.4783H18.4167V25.9783H0V10.8117C0 9.01333 1.4625 7.56167 3.25 7.56167H7.61583C7.13917 8.19 6.78167 8.92667 6.61917 9.72833H3.25C2.65417 9.72833 2.16667 10.2158 2.16667 10.8117V23.8117H16.25V19.4783ZM25.3608 7.10667L18.265 0L16.7375 1.5275L22.7608 7.55083H11.9167C10.1292 7.55083 8.66667 9.01333 8.66667 10.8008V19.4675H10.8333V10.8117C10.8333 10.2158 11.3208 9.72833 11.9167 9.72833H22.75L16.6725 15.8058L18.2 17.3333L25.3608 10.1725C26.2058 9.3275 26.2058 7.95167 25.3608 7.10667Z" />
+                  </svg>
+                </Button> */}
+              </div>
+            </div>
+            <div className="w-full justify-end lg:flex hidden relative ">
+              <img
+                src={skyrocket}
+                alt=""
+                className="w-auto h-auto max-w-full max-h-[18rem] object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        // className="flex justify-start lg:pb-18  pb-28 overflow-hidden"
+        className="-ml-8 -mr-8 justify-end flex"
+      >
+        <div className=" bg-[#FFAE74] items-end border border-[#FBFBFB] lg:w-[85%] w-full lg:rounded-tl-[60px] lg:rounded-bl-[60px] flex flex-col justify-center  py-12 px-8 relative ">
+          <div className="grid lg:grid-cols-2">
+            <div className="w-full justify-end lg:flex hidden relative ">
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[5rem]  h-[5rem]  hidden lg:flex absolute top-0 left-[15rem] -rotate-[30deg]"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[10rem]  h-[10rem]  hidden lg:flex absolute bottom-8 left-[8rem]"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[4rem] h-[4rem]  hidden lg:flex absolute bottom-0 left-[2rem] rotate-12"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[7rem]  h-[7rem]  hidden lg:flex absolute top-10 left-[23rem]  rotate-[30deg]"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[2rem]  h-[2rem]  hidden lg:flex absolute  bottom-0 left-[23rem]  rotate-12"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[2rem]  h-[2rem]  hidden lg:flex absolute  bottom-8 left-[30rem]  -rotate-12"
+              />
+              <img
+                src={monarkToken}
+                alt=""
+                className="w-[2rem]  h-[2rem]  hidden lg:flex absolute  top-10 left-[6rem]  -rotate-12"
+              />
+            </div>
+            <div className="lg:max-w-[900px] w-full">
               <div className="w-full">
                 <div className="flex items-center space-x-2">
                   <span className="text-[#323236] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold mb-4">
@@ -316,14 +431,14 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="text-[#151419] font-mitr text-[16px] leading-[22px] w-full text-left mb-8">
-                Monark's utility token is your key to unlock a wealth of
-                opportunity within our ecosystem. Enjoy exclusive benefits and
-                rewards and enhance your DeFi experience.
+                Powered by Monark, likeaser.fun is the ultimate do-it-yourself
+                token factory, where anyone can create their own token, set up a
+                launchpad, and invite the world to join the ride.
               </div>
               <div className="flex lg:mb-[5rem] mb-0">
                 {/* <button className="bg-[#151419] text-[#F56E0F] font-bold py-2 px-4 rounded-full"> */}
                 <button
-                  className="bg-black text-[#F56E0F] font-bold py-2 px-4 rounded-full hover:cursor-not-allowed"
+                  className="bg-[#A3A0A0] text-black font-bold py-2 px-4 rounded-full hover:cursor-not-allowed"
                   disabled
                 >
                   Discover $MNRK
@@ -351,28 +466,6 @@ const HomePage = () => {
                   </svg>
                 </Button>
               </div>
-            </div>
-            <div className="w-full justify-end lg:flex hidden relative ">
-              <img
-                src={monarkToken}
-                alt=""
-                className="w-[4rem]  h-[4rem]  hidden lg:flex absolute top-0 right-[6rem]  -rotate-[30deg]"
-              />
-              <img
-                src={monarkToken}
-                alt=""
-                className="w-[10rem]  h-[10rem]  hidden lg:flex absolute bottom-0 right-[4rem]"
-              />
-              <img
-                src={monarkToken}
-                alt=""
-                className="w-[3rem]  h-[3rem]  hidden lg:flex absolute bottom-8 -rotate-12"
-              />
-              <img
-                src={monarkToken}
-                alt=""
-                className="w-[6rem]  h-[6rem]  hidden lg:flex absolute top-10 rotate-[30deg]"
-              />
             </div>
           </div>
         </div>
@@ -420,6 +513,22 @@ const HomePage = () => {
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="-ml-8 -mr-8 ">
+        <div className=" bg-[#686767] w-full flex p-4 relative justify-center items-center">
+          <span className="text-[#FBFBFB] lg:text-[50px] lg:leading-[55px] text-[30px] leading-[35px] font-mitr font-bold">
+            Our partners
+          </span>
+        </div>
+      </div>
+      <div className="-ml-8 -mr-8 lg:mb-[10rem] mb-8">
+        <div className=" bg-[#FBFBFB] w-full flex p-12 relative justify-center items-center">
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-[10rem] gap-4">
+            <img src={rootstock} alt="" className="w-[30rem] h-auto" />
+            <img src={algebra} alt="" className="w-[28rem] h-auto" />
           </div>
         </div>
       </div>

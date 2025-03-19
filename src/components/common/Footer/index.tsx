@@ -214,6 +214,14 @@ const items: {
         label: "Whitepaper",
         href: "https://docs.monark.exchange/",
       },
+      {
+        label: "Launch token",
+        href: "https://www.likeaser.fun/",
+      },
+      {
+        label: "Collab with us",
+        href: "https://docs.monark.exchange/collaborate-with-us",
+      },
       /*{
             label: t("Brand"),
             href: "https://docs.pancakeswap.finance/brand",
@@ -231,17 +239,17 @@ const items: {
   {
     label: "Help",
     items: [
-      // {
-      //   label: "Support",
-      //   href: "https://discord.gg/fy2588h62c",
-      // },
+      {
+        label: "Support",
+        href: "https://t.me/MONARKOfficial",
+      },
       {
         label: "Guides",
         href: "https://docs.monark.exchange/connect-wallet",
       },
       {
         label: "Github",
-        href: "",
+        href: "https://github.com/jmonark/monark",
       },
     ],
   },
@@ -272,7 +280,7 @@ const items: {
 const Footer = () => {
   return (
     // <footer className="p-4"></footer>
-    <div className="bg-[#151419] p-[56px_40px_32px_40px] relative flex justify-center -mb-8 -ml-8 -mr-8">
+    <div className="bg-[#151419] p-[56px_40px_32px_40px] flex justify-center -mb-8 -ml-8 -mr-8">
       <div className="flex flex-col w-[1200px]">
         <div className="mb-12">
           <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-[#151419] rounded-3xl  duration-200">

@@ -15,3 +15,20 @@ export const NATIVE_PRICE = gql`
     }
 `
 
+export const TVL_VOLUME_USD_FRAGMENT = gql`
+    fragment TVLVolumeUSDFields on Factory {
+        totalValueLockedUSD
+        totalVolumeUSD
+    }
+`
+
+export const TVL_VOLUME_USD = gql`
+    query TVLVolumeUSD {
+        factories (first: 1) {
+            ...TVLVolumeUSDFields
+        }
+    }
+`
+
+
+
