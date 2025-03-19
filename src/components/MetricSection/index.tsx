@@ -391,7 +391,7 @@ const Stats = () => {
   };
 
   // Use the GraphQL generated hook to fetch TVL and volume data
-  const { data, loading, error } = useTvlVolumeUsdQuery();
+  const { data, loading } = useTvlVolumeUsdQuery();
 
   // Format the TVL and volume data with appropriate number formatting
   const formattedTvl = data?.factories[0].totalValueLockedUSD

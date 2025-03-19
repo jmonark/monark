@@ -302,7 +302,7 @@ const Navigation = () => {
               key={`nav-item-${item.link}`}
               // target={item.external ? "_blank" : ""}
               onClick={(e) => item.isActive && e.preventDefault()}
-              to={item.link}
+              to={item.link || ""}
               className={` ${
                 item.isActive
                   ? "cursor-not-allowed text-[#323236]"
@@ -328,7 +328,7 @@ const Navigation = () => {
             <NavLink
               key={`nav-item-${item.link}`}
               onClick={(e) => item.isActive && e.preventDefault()}
-              to={item.link}
+              to={item.link || ""}
               className={` ${
                 item.isActive
                   ? "cursor-not-allowed text-[#323236]"
